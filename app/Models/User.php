@@ -17,7 +17,7 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    protected $fillable = ['name', 'email','password','mobile','otp'];
+    protected $fillable = ['name','email','mobile','password','otp'];
 
     //  default attributes
 
@@ -32,7 +32,7 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-   
+
     protected function casts(): array
     {
         return [
