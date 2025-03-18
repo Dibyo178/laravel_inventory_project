@@ -8,5 +8,5 @@ class Customer extends Model
 {
     //
 
-    protected $filable =['name', 'email','mobile','user_id'];
+    protected $fillable =['name', 'email','mobile','user_id'];
 }

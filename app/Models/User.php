@@ -9,27 +9,16 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-       protected $fillable = ['name','email','mobile','password','otp'];
 
-    //  default attributes
+    protected $fillable = ['name','mobile','otp', 'email', 'password',];
 
-      protected $attributes = [
+    protected $attributes = [
+        'otp' => '0'
+    ];
 
-         'otp'=>'0'
-      ];
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
 
-
-    // protected $hidden = [
-    //     'password',
-    //     'remember_token',
-    // ];
-
-
-    // protected function casts(): array
-    // {
-    //     return [
-    //         'email_verified_at' => 'datetime',
-    //         'password' => 'hashed',
-    //     ];
-    // }
 }
