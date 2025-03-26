@@ -63,7 +63,7 @@ class UserController extends Controller
             return response()->json([
                 'status' => 'failed',
                 'message' => 'unauthorized'
-            ],200);
+            ],401);
 
         }
 
@@ -72,7 +72,12 @@ class UserController extends Controller
 
 
     function UserLogout(){
+        // return redirect('/')->cookie('token','',-1);
+
+        // cokkie can do nagative number cokkies automatic cokkies clean
+
         return redirect('/')->cookie('token','',-1);
+
     }
 
     function SendOTPCode(Request $request){
@@ -138,7 +143,7 @@ class UserController extends Controller
             return response()->json([
                 'status' => 'fail',
                 'message' => 'Something Went Wrong',
-            ],200);
+            ],401);
         }
 
     }

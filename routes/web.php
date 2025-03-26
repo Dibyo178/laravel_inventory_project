@@ -11,11 +11,14 @@ Route::post('/user_registration', [UserController::class, 'UserRegistration']);
 
 Route::post('/user_login',[UserController::class,'UserLogin']);
 
+Route::get('/user_logout',[UserController::class,'UserLogout']);
+
 Route::post('/user_sendotp',[UserController::class,'SendOtpCode']);
 
 Route::post('/user_verify',[UserController::class,'VerifyOtp']);
 
-// Tocken verification
-
+// Token verification
+Route::get('/user-profile',[UserController::class,'UserProfile'])->middleware([TokenVerificationMiddleware::class]);
+Route::post('/user-update',[UserController::class,'UpdateProfile'])->middleware([TokenVerificationMiddleware::class]);
 Route::post('/user_ResetPassword',[UserController::class,'ResetPassword'])
 ->middleware([TokenverificationMiddleware::class]);
