@@ -54,6 +54,5 @@ class ProductController extends Controller
             'category_id'=>$request->input('category_id')
         ]);
 
-
     }
 }
