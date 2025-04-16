@@ -24,16 +24,19 @@ class TokenverificationMiddleware
       if($result == 'unauthorized'){
 
 
-        return response()->json([
-            'status' => 'Verify failed',
-            'message' => 'Unauthorized'
-        ], 401);
+        // return response()->json([
+        //     'status' => 'Verify failed',
+        //     'message' => 'Unauthorized'
+        // ], 401);
+
+        return redirect('/userLogin');
 
       }
        else{
 
-        $request->headers->set('email',$result);
-         return $next($request);
+        $request->headers->set('email',$result->userEmail);
+            $request->headers->set('id',$result->userID);
+            return $next($request);
 
 
        }
