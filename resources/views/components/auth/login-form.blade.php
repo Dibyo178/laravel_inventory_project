@@ -55,13 +55,15 @@ async function SubmitLogin() {
         try {
             showLoader();
             let res = await axios.post("/user_login", { email: email, password: password });
-            hideLoader();
+            hideLoader()
 
             if (res.status === 200 && res.data['status'] === 'success') {
                 // Small delay so loader can disappear smoothly
-                setTimeout(() => {
-                    window.location.href = "/dashboard";
-                }, 300);
+                // setTimeout(() => {
+                //     window.location.href = "/dashboard";
+                // }, 300);
+
+                window.location.href = "/dashboard";
             } else {
                 errorToast(res.data['message']);
             }

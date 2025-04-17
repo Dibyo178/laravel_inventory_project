@@ -11,6 +11,20 @@
     z-index: 500000 !important;
     background-color: rgba(255, 255, 255, 0.4);
 }
+
+
+/* .LoadingOverlay {
+    position: fixed;
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.4);
+} */
+
+
 .Line-Progress .indeterminate {
     background-color: #cb0c9f;
 }
