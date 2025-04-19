@@ -19,10 +19,10 @@
         let otp = document.getElementById('otp').value;
         if(otp.length !==4){
            errorToast('Invalid OTP')
-        }
+        } 
         else{
             showLoader();
-            let res=await axios.post('/verify-otp', {
+            let res=await axios.post('/user_verify', {
                 otp: otp,
                 email:sessionStorage.getItem('email')
             })

@@ -25,10 +25,12 @@ Route::post('/user_sendotp',[UserController::class,'SendOtpCode']);
 Route::post('/user_verify',[UserController::class,'VerifyOtp']);
 
 // Token verification
-Route::get('/user-profile',[UserController::class,'UserProfile'])->middleware([TokenVerificationAPIMiddleware::class]);
-Route::post('/user-update',[UserController::class,'UpdateProfile'])->middleware([TokenVerificationAPIMiddleware::class]);
-Route::post('/user_ResetPassword',[UserController::class,'ResetPassword'])
-->middleware([TokenVerificationAPIMiddleware::class]);
+
+
+Route::post('/reset-password',[UserController::class,'ResetPassword'])->middleware([TokenVerificationMiddleware::class]);
+Route::get('/user-profile',[UserController::class,'UserProfile'])->middleware([TokenVerificationMiddleware::class]);
+Route::post('/user-update',[UserController::class,'UpdateProfile'])->middleware([TokenVerificationMiddleware::class]);
+
 
 // Category
 Route::post("/create-category",[CategoryController::class,'CategoryCreate'])->middleware([TokenVerificationAPIMiddleware::class]);
