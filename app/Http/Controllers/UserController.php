@@ -100,7 +100,7 @@ class UserController extends Controller
 
         // cokkie can do nagative number cokkies automatic cokkies clean
 
-        return redirect('/')->cookie('token','',-1);
+        return redirect('/userLogin')->cookie('token','',-1);
 
     }
 

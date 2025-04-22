@@ -27,6 +27,8 @@
     @yield('content')
 
 </div>
+
+
 <script>
 
 </script>
