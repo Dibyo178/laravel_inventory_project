@@ -43,7 +43,7 @@
         let updateID = document.getElementById('updateID').value;
 
         if (categoryName.length === 0) {
-            errorToast("Category Required !")
+            errorToast("Category Required !") 
         }
         else{
             document.getElementById('update-modal-close').click();
