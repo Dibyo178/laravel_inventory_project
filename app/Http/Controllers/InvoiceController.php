@@ -71,7 +71,6 @@ class InvoiceController extends Controller
          }
     }
 
-
     function invoiceSelect(Request $request){
         $user_id=$request->header('id');
         return Invoice::where('user_id',$user_id)->with('customer')->get();
@@ -91,7 +90,6 @@ class InvoiceController extends Controller
         );
 
     }
-
 
     function invoiceDelete(Request $request){
         DB::beginTransaction();
